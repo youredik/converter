@@ -53,7 +53,7 @@ final readonly class Converter
                 continue;
             }
 
-            fputcsv($csvObjectResource, [$row[1], $row[3], $row[4], $row[0]]);
+            fputcsv($csvObjectResource, [$row[1], $row[3], $row[4], $row[0]], ';');
         }
         fclose($csvObjectResource);
     }
