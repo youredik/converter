@@ -33,11 +33,6 @@ final readonly class Converter
             'Key' => $csvObject,
             'SourceFile' => $this->tempDir . '/' . $csvObjectName,
         ]);
-
-        $this->s3->deleteObject([
-            'Bucket' => 'parts',
-            'Key' => $this->objectId,
-        ]);
     }
 
     private function convert(string $csvObjectName): void
