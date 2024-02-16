@@ -13,11 +13,7 @@ use App\Converter;
  */
 function handler($event, $context): array
 {
-    $objectId = $event['messages'][0]['details']['object_id'] ?? null;
-    if ($objectId === null) {
-        throw new Exception('Invalid event data, not found object id');
-    }
-
+    $objectId = $event['messages'][0]['details']['object_id'];
     $priceDir = getenv('PRICES_FOLDER');
     $tempDir = getenv('TEMP_FOLDER');
 
